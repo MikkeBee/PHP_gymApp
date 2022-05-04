@@ -1,8 +1,78 @@
 body {
-  background-color: rgb(24, 130, 132);
+  background-color: rgb(85, 148, 203);
+}
+
+h1 {
+  text-align: center;
+  font-family: "Staatliches", cursive;
+  font-size: 4rem;
+}
+
+.container1 {
+  margin: 0.5rem 2rem;
+}
+
+.getter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.createForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.createForm p {
+  margin: 0.4rem 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+.postForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postForm p {
+  margin: 0.4rem 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+.postForm button {
+  margin-top: 0.3rem;
+}
+
+.getter button {
+  width: 10rem;
+}
+
+.getter select {
+  width: 10rem;
+}
+
+.title {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.workouts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .update {
   display: flex;
-  flex-direction: column;
+}
+
+.innerSanctum {
+  margin: 0.5rem;
 }

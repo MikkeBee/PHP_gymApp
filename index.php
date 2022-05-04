@@ -56,43 +56,20 @@ if (isset($_POST['delete'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Racing+Sans+One&family=Staatliches&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/06ae1c778f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
     <title>Workout Tracker</title>
 </head>
 <body>
   <header>
-<h1> Workouts </h1>
+<h1> <i class="fa-solid fa-dumbbell"></i>  Gainz Trackr  <i class="fa-solid fa-dumbbell"></i></h1>
 </header>
     <div class="container1">
-     
-
-          <form action="index.php?table=<?=$table2?>" method="POST" class="form">
-            <textarea
-                id="exercise"
-                name="exercise"></textarea>
-                <textarea
-                id="reps"
-                name="reps"></textarea>
-                <textarea
-                id="weight"
-                name="weight"></textarea>
-                <textarea
-                id="notes"
-                name="notes"></textarea>
-            
-              <button type="submit" name="submit" class="btn">Add item to the list</button>
-            
-          </form>
-    </div>
-
-
-    <div class="container2">
-
-
-
-
-<div class="workouts">
     <form class="getter" action="index.php?table=<?=$table2?>" method="GET">
+    <button>Select your workout</button>
     <select class="tableSelect" name="table">
            <?php 
            $query = "SHOW TABLES";
@@ -112,9 +89,42 @@ if (isset($_POST['delete'])) {
                   <?php
                 } ?>
             </select>
-            <button>Select</button>
+            
 </form>
-                <form class="update" action="index.php?table=<?=$table2?>" method="post">
+<form action="index.php" method="POST" class="createForm">
+<p>Can't find what you're looking for? Add a new workout programme!</p>
+<div>
+<input type="text" id="newTable" name="newTable" placeholder="Enter programme name"></input>
+<button type="submit" name="submit" class="btn">Add it!</button>
+</div>
+</form>
+          <form action="index.php?table=<?=$table2?>" method="POST" class="postForm">
+          <p>Need to add an exercise? Do it here!</p>
+          <div class="posterInputs">
+            <input type="text"
+                id="exercise"
+                name="exercise" placeholder="exercise"></input>
+                <input type="text"
+                id="reps"
+                name="reps" placeholder="reps"></input>
+                <input type="text"
+                id="weight"
+                name="weight" placeholder="weight"></input>
+                <input type="text"
+                id="notes"
+                name="notes" placeholder="notes"></input>
+            </div>
+              <button type="submit" name="submit" class="btn">Add it!</button>
+            
+          </form>
+    </div>
+
+
+    
+
+
+<div class="workouts">
+<p class="title">Your workout: <?= $table2?></p>
                 <?php 
                 $query = "SELECT * FROM {$table2}";
                 $result = mysqli_query($connection, $query);
@@ -130,7 +140,10 @@ if (isset($_POST['delete'])) {
     $weight = $row['Weight'];
     $notes = $row['Notes'];
     ?>
-       <select name="id">
+   <form class="update" action="index.php?table=<?=$table2?>" method="post">
+
+    <div class="innerSanctum">
+       <select name="id" hidden>
             <?= "<option value='$id'>$id</option>"?>
         </select>
         <input class="textfield" type="text"  value="<?= $exercise ?>"  name="exercise" /> 
@@ -139,10 +152,9 @@ if (isset($_POST['delete'])) {
         <input class="textfield" type="text"  value="<?= $notes ?>"  name="notes" />
          <input class="inputButton" type="submit" name="update" value="Update">
          <input class="inputButton" type="submit" name="delete" value="Delete">
+                </div>
     </form>
     <?php } ?> 
 </div>
-
- </div>
 </body>
 </html>
