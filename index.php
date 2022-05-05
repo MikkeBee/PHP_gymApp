@@ -44,6 +44,21 @@ if (isset($_POST['delete'])) {
     }
   };
 
+  if (isset($_POST['create'])) {
+    $newtable = $_POST['newTable'];
+    $query = "CREATE TABLE `$newtable` (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        Exercise TEXT,
+        Reps TEXT,
+        Weight TEXT,
+        Notes TEXT
+        )";
+        
+        $result = mysqli_query($connection, $query);
+    if (!$result) {
+      die("Creation is not existant" . mysqli_error($connection));
+    }
+  }
   
 
 
@@ -94,8 +109,8 @@ if (isset($_POST['delete'])) {
 <form action="index.php" method="POST" class="createForm">
 <p>Can't find what you're looking for? Add a new workout programme!</p>
 <div>
-<input type="text" id="newTable" name="newTable" placeholder="Enter programme name"></input>
-<button type="submit" name="submit" class="btn">Add it!</button>
+<input type="text" id="newTable" name="newTable" placeholder="Enter name"></input>
+<button type="submit" name="create" class="btn">Add it!</button>
 </div>
 </form>
           <form action="index.php?table=<?=$table2?>" method="POST" class="postForm">
@@ -125,20 +140,19 @@ if (isset($_POST['delete'])) {
 
 <div class="workouts">
 <p class="title">Your workout: <?= $table2?></p>
-                <?php 
-                $query = "SELECT * FROM {$table2}";
-                $result = mysqli_query($connection, $query);
-                if(!$result){
-                    die('Computer says no');
-                    
-                };
+    <?php 
+        $query = "SELECT * FROM {$table2}";
+        $result = mysqli_query($connection, $query);
+        if(!$result){
+            die('Computer says no');
+        };
                 
-                while($row = mysqli_fetch_assoc($result)){
-    $id = $row['id'];
-    $exercise = $row['Exercise'];
-    $reps = $row['Reps'];
-    $weight = $row['Weight'];
-    $notes = $row['Notes'];
+        while($row = mysqli_fetch_assoc($result)){
+        $id = $row['id'];
+        $exercise = $row['Exercise'];
+        $reps = $row['Reps'];
+        $weight = $row['Weight'];
+        $notes = $row['Notes'];
     ?>
    <form class="update" action="index.php?table=<?=$table2?>" method="post">
 
