@@ -79,6 +79,7 @@ if (isset($_POST['delete'])) {
     <title>Workout Tracker</title>
 </head>
 <body>
+    <div class="overlay">
   <header>
 <h1> <i class="fa-solid fa-dumbbell"></i>  Gainz Trackr  <i class="fa-solid fa-dumbbell"></i></h1>
 </header>
@@ -169,6 +170,7 @@ if (isset($_POST['delete'])) {
                 </div>
     </form>
     <?php } ?> 
+</div>
 </div>
 </body>
 </html>
