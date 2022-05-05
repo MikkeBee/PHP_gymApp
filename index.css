@@ -1,7 +1,7 @@
 body {
     background-image: url(./images/background7.jpeg);
     background-repeat: no-repeat;
-    background-size: 120% 120%;
+    background-size: cover;
   /* background-color: rgb(85, 148, 203); */
 }
 
@@ -13,7 +13,7 @@ h1 {
 }
 
 p {
-    text-shadow: 0 0 5px rgba(187, 123, 27, 0.634), 0 0 5px rgba(187, 123, 27, 0.634), 0 0 5px rgba(187, 123, 27, 0.634);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.577), 0 0 5px rgba(255, 255, 255, 0.577), 0 0 5px rgba(255, 255, 255, 0.577);
 }
 
 button {
