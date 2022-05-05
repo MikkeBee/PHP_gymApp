@@ -14,12 +14,12 @@ button {
   padding: 0.5rem;
   color: white;
   background-color: darkslategrey;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 button:active {
   border-style: inset;
-  transition: 0.5s;
+  background-color: rgb(37, 58, 58);
 }
 
 .inputButton {
@@ -27,11 +27,12 @@ button:active {
   padding: 0.3rem;
   color: white;
   background-color: darkslategrey;
+  transition: 0.2s;
 }
 
 .inputButton:active {
   border-style: inset;
-  transition: 0.5s;
+  background-color: rgb(37, 58, 58);
 }
 
 .container1 {
@@ -101,4 +102,97 @@ button:active {
 
 .innerSanctum {
   margin: 0.5rem;
+}
+
+@media (max-width: 446px) {
+  .posterInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .posterInputs input {
+    margin: 0.1rem;
+  }
+
+  .innerSanctum {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .textfield {
+    width: 11rem;
+    margin: 0.1rem;
+  }
+}
+
+@media (max-width: 406px) {
+  .posterInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .posterInputs input {
+    margin: 0.1rem;
+  }
+
+  .innerSanctum {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .textfield {
+    width: 10rem;
+    margin: 0.1rem;
+  }
+}
+
+@media (max-width: 377px) {
+  .posterInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .posterInputs input {
+    width: 7rem;
+    margin: 0.2rem;
+  }
+
+  .innerSanctum {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .textfield {
+    width: 9rem;
+    margin: 0.1rem;
+  }
+
+@media (max-width: 342px) {
+    .posterInputs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .posterInputs input {
+      width: 7rem;
+      margin: 0.2rem;
+    }
+  
+    .innerSanctum {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .textfield {
+      width: 8rem;
+      margin: 0.1rem;
+    }
 }
